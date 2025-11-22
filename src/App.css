@@ -1,38 +1,168 @@
-.App {
+/*  Abordagem mobile-first implementada */
+body {
+  background-color: #ffe5f0;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: monospace;
+  color: #a788ab;
+  font-size: 1.2em;
+}
+
+img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+/* Estilização da página principal do projeto */
+
+nav#menu {
+  align-items: center;
+  padding: 0 30px;
+}
+
+nav#menu ul {
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  gap: 10px;
+  padding: 0;
+}
+
+nav#menu li {
+  display: inline-block;
+  background-color: #fffafa;
+  padding: 10px 15px;
+  transition: background-color 1s;
+  border: 1px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 80%;
+}
+
+nav#menu li:hover {
+  background-color: #ffe5f0;
+}
+
+nav#menu a {
+  text-decoration: none;
+  color: #333333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.img-flor {
+  width: 80px;
+  height: auto;
+}
+
+/* Estilização da tag <a> como um botão de login  */
+
+.btn {
+  font-size: 16px;
+  background-color: #ffffff;
+  padding: 10px 15px;
+  color: #333333;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+
+/* Estilização do formulário */
+
+/*.form-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+form input[type="text"],
+form input[type="password"] {
+  width: 100%;
+  margin: 8px 0;
+  padding: 8px;
+  border: 1px solid #333333;
+  border-radius: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+form input[type="submit"],
+form input[type="reset"] {
+  margin: 10px 0;
+  padding: 5px 10px;
+  font-size: 15px;
+  color: #333333;
+  background: #dfcae1;
+  font-family: monospace;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* Aplicação de Media Queries */
+
+/* Media Query para Tablets */
+@media (mix-width: 768px) {
+  h1,
+  h2,
+  h3 {
+    font-size: 1.5em;
+  }
+
+  .btn {
+    font-size: 18px;
+    padding: 12px 25px;
+  }
+
+  .form-container {
+    margin: 50px auto;
+    padding: 40px;
+  }
+
+  nav#menu ul {
+    max-width: 500px;
+  }
+
+  nav#menu li {
+    width: 100%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/*  Media Query p Desktops  */
+@media (min-width: 992px) {
+  h1,
+  h2,
+  h3 {
+    font-size: 2em;
   }
-  to {
-    transform: rotate(360deg);
+
+  .btn {
+    font-size: 20px;
+    padding: 10px 20px;
+  }
+
+  nav#menu {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  nav#menu ul {
+    flex-direction: row;
+    justify-content: center;
+    max-width: 800px;
+  }
+
+  nav#menu li {
+    width: auto;
+    margin: 2px;
   }
 }

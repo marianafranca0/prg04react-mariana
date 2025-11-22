@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import Pagina from "./pages/Pagina";
+import "./App.css";
+
+//! Outras funcionalidades a serem desenvolvidas.
+//* implementado no momento apenas a estrutura inicial do projeto em React
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Pagina />
     </div>
   );
 }
-
 export default App;
