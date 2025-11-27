@@ -7,6 +7,7 @@ import NewProject from "./components/pages/NewProject";
 import Container from "./components/layout/Container";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import Projects from "./components/pages/Projects";
 
 //* Componente raiz
 //* define as rotas principais usando Router e aplica o layout
@@ -27,7 +28,7 @@ function App() {
         <Route
           path="/company"
           element={
-            <Container>
+            <Container customClass="min-height">
               <Company />
             </Container>
           }
@@ -35,15 +36,23 @@ function App() {
         <Route
           path="/contact"
           element={
-            <Container>
+            <Container customClass="min-height">
               <Contact />
+            </Container>
+          }
+        />
+        <Route
+          path="/projects"
+          element={
+            <Container customClass="min-height">
+              <Projects />
             </Container>
           }
         />
         <Route
           path="/newproject"
           element={
-            <Container>
+            <Container customClass="min-height">
               <NewProject />
             </Container>
           }

@@ -7,15 +7,30 @@ import logo from "../../img/logoo.png";
 //* barra de navegação principal do site.
 function Navbar() {
   return (
-    <nav>
+    <nav class={styles.navbar}>
       <Container>
         <Link to="/">
           <img src={logo} alt="Proiecte" />
         </Link>
-        <Link to="/">Home</Link>
-        <Link to="/contact">Contato</Link>
-        <Link to="/company">Empresa</Link>
-        <Link to="/newproject">Novo Projeto</Link>
+        <ul class={styles.list}>
+          <li class={styles.item}>
+            {" "}
+            <Link to="/">Home</Link>
+          </li>
+          <li class={styles.item}>
+            {" "}
+            <Link to="/projects">Projetos</Link>
+          </li>
+
+          <li class={styles.item}>
+            {" "}
+            <Link to="/company">Empresa</Link>
+          </li>
+          <li class={styles.item}>
+            {" "}
+            <Link to="/contact">Contato</Link>
+          </li>
+        </ul>
       </Container>
     </nav>
   );
