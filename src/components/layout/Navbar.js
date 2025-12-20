@@ -7,26 +7,32 @@ import logo from "../../img/logoo.png";
 //* barra de navegação principal do site.
 function Navbar() {
   return (
-    <nav class={styles.navbar}>
+    <nav className={styles.navbar}>
       <Container>
         <Link to="/">
           <img src={logo} alt="Proiecte" />
         </Link>
-        <ul class={styles.list}>
-          <li class={styles.item}>
+        <ul className={styles.list}>
+          <li className={styles.item}>
             {" "}
             <Link to="/">Home</Link>
           </li>
-          <li class={styles.item}>
+
+          <li className={styles.item}>
+            {" "}
+            <Link to="/newclient">Login</Link>
+          </li>
+
+          <li className={styles.item}>
             {" "}
             <Link to="/projects">Projetos</Link>
           </li>
 
-          <li class={styles.item}>
+          <li className={styles.item}>
             {" "}
             <Link to="/company">Empresa</Link>
           </li>
-          <li class={styles.item}>
+          <li className={styles.item}>
             {" "}
             <Link to="/contact">Contato</Link>
           </li>

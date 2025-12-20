@@ -1,0 +1,13 @@
+.form {
+  width: 100%;
+  margin: 2em 0;
+}
+
+.btn {
+  background-color: #222;
+  color: #fff;
+  padding: 0.6em 1.5em;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 500;
+}
