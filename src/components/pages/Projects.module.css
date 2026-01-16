@@ -1,0 +1,44 @@
+.projects_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  padding: 3em;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 2em;
+  background-color: #f9f9f9;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 1.5em;
+  color: #222;
+  font-size: 1.3em;
+}
+
+.section p {
+  color: #7b7b7b;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 1.5em;
+}
+
+.btn_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.projects_list {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #999;
+}

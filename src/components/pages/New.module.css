@@ -1,13 +1,27 @@
 .new_container {
-  width: 400px;
+  width: 500px;
   margin: 0 auto;
   padding: 3em;
 }
 
 .new_container h1 {
   margin-bottom: 0.5em;
+  text-align: center;
 }
 
 .new_container p {
   color: #7b7b7b;
+  text-align: center;
+  font-size: 18px;
 }
+
+.new_container img {
+  margin-left: 170px;
+}
+
+.btn_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+

@@ -8,6 +8,7 @@ import Container from "./components/layout/Container";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import Projects from "./components/pages/Projects";
+import Tasks from "./components/pages/Tasks";
 import NewClient from "./components/pages/NewClient";
 
 //* Componente raiz
@@ -47,6 +48,14 @@ function App() {
           element={
             <Container customClass="min-height">
               <Projects />
+            </Container>
+          }
+        />
+        <Route
+          path="/tasks"
+          element={
+            <Container customClass="min-height">
+              <Tasks />
             </Container>
           }
         />

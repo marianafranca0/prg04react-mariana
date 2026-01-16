@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import Input from "../form/Input";
-import Select from "../form/Select";
-import styles from "./ProjectForm.module.css";
+import Input from "./Input";
+import Select from "./Select";
+import styles from "../form/Form.module.css";
 
 //* Formulário que coleta dados do projeto
 function ProjectForm() {
@@ -86,7 +86,7 @@ function ProjectForm() {
 
       {/* Campo que seleciona o cliente já cadastrado*/}
       <Select
-        text="Selecione o cliente"
+        text="Selecione o cliente:"
         name="idCliente"
         options={clientes}
         value={projeto.idCliente}

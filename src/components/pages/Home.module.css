@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   padding: 4em;
+  min-height: 80vh;
 }
 .home_container h1 {
   font-size: 2.5em;
@@ -16,11 +17,32 @@
 }
 
 .home_container p {
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
   color: #7b7b7b;
+  font-size: 1.1em;
 }
 
-.home_container img {
-  width: 350px;
-  margin: 2em 0;
+.btn_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.btn_container a {
+  display: inline-block;
+  padding: 1.2em 3.5em;
+  font-size: 1.1em;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 300px;
+  min-height: 55px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn_container a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(32, 32, 32, 0.6);
 }

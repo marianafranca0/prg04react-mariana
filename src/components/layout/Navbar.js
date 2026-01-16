@@ -4,7 +4,7 @@ import styles from "./Navbar.module.css";
 import logo from "../../img/logoo.png";
 
 //* Navbar -
-//* barra de navegação principal do site.
+//* barra de navegação do site.
 function Navbar() {
   return (
     <nav className={styles.navbar}>
@@ -20,12 +20,12 @@ function Navbar() {
 
           <li className={styles.item}>
             {" "}
-            <Link to="/newclient">Login</Link>
+            <Link to="/projects">Projetos</Link>
           </li>
 
           <li className={styles.item}>
             {" "}
-            <Link to="/projects">Projetos</Link>
+            <Link to="/tasks">Tarefas</Link>
           </li>
 
           <li className={styles.item}>

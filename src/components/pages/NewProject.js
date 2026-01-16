@@ -1,12 +1,13 @@
-import ProjectForm from "../project/ProjectForm";
+import ProjectForm from "../form/ProjectForm";
 import styles from "./New.module.css";
+
+import projeto from "../../img/projeto (2).png";
 
 //* Página de criação de projetos
 function NewProject() {
   return (
     <div className={styles.new_container}>
-      <h1>Criar Projeto</h1>
-      <p>Crie seu projeto para depois adicionar os serviços</p>
+      <img src={projeto} alt="seta" />
       <ProjectForm />
     </div>
   );

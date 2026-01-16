@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Input from "../form/Input";
-import styles from "./ClientForm.module.css";
+import Input from "./Input";
+import styles from "../form/Form.module.css";
 
 //* Formulário que coleta dados do cliente
 
@@ -62,7 +62,7 @@ function ClientForm() {
       {/* Campo nome */}
       <Input
         type="text"
-        text="Nome do cliente"
+        text="Nome"
         name="nome"
         placeholder="Insira o nome do cliente"
         onChange={(e) => setCliente({ ...cliente, nome: e.target.value })}
@@ -71,16 +71,22 @@ function ClientForm() {
       {/* Campo cnpj */}
       <Input
         type="text"
-        text="Cnpj do Cliente"
+        text="Cnpj"
         name="cnpj"
-        placeholder="Insira o cnpj do cliente"
-        onChange={(e) => setCliente({ ...cliente, cnpj: e.target.value })}
+        placeholder="Insira o cnpj do cliente (14 dígitos)"
+        onChange={(e) => {
+          const valor = e.target.value.replace(/\D/g, "");
+          if (valor.length <= 14) {
+            setCliente({ ...cliente, cnpj: valor });
+          }
+        }}
+        value={cliente.cnpj}
       />
 
       {/* Campo email */}
       <Input
         type="email"
-        text="Email do cliente"
+        text="Email"
         name="email"
         placeholder="Insira o email do cliente"
         onChange={(e) => setCliente({ ...cliente, email: e.target.value })}
@@ -88,11 +94,27 @@ function ClientForm() {
 
       {/* Campo telefone */}
       <Input
-        type="tel"
-        text="Telefone do cliente"
+        type="text"
+        text="Telefone"
         name="telefone"
-        placeholder="Insira o telefone do cliente"
-        onChange={(e) => setCliente({ ...cliente, telefone: e.target.value })}
+        placeholder="Insira o telefone do cliente (11 dígitos)"
+        onChange={(e) => {
+          const valor = e.target.value.replace(/\D/g, "");
+          if (valor.length <= 11) {
+            let telefoneFormatado = valor;
+            if (valor.length >= 2) {
+              telefoneFormatado = `(${valor.slice(0, 2)}) ${valor.slice(2)}`;
+            }
+            if (valor.length > 7) {
+              telefoneFormatado = `(${valor.slice(0, 2)}) ${valor.slice(
+                2,
+                7
+              )}-${valor.slice(7)}`;
+            }
+            setCliente({ ...cliente, telefone: telefoneFormatado });
+          }
+        }}
+        value={cliente.telefone}
       />
       <div>
         <input className={styles.btn} type="submit" value="Cadastrar Cliente" />
