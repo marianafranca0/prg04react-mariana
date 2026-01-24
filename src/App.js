@@ -1,22 +1,35 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useLocation,
+} from "react-router-dom";
 import "./index.css";
 import Home from "./components/pages/Home";
-import Company from "./components/pages/Company";
-import Contact from "./components/pages/Contact";
-import NewProject from "./components/pages/NewProject";
+
+import NewProject from "./components/pages/NewProjeto";
 import Container from "./components/layout/Container";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
-import Projects from "./components/pages/Projects";
-import Tasks from "./components/pages/Tasks";
+import Projeto from "./components/pages/Projeto";
+import Tarefa from "./components/pages/Tarefa";
+import NewTarefa from "./components/pages/NewTarefa";
 import NewClient from "./components/pages/NewClient";
+import ClienteForm from "./components/form/ClienteForm";
+import Dashboard from "./components/pages/Dashboard";
+import Equipe from "./components/pages/Equipe";
+import NewEquipe from "./components/pages/NewEquipe";
 
-//* Componente raiz
-//* define as rotas principais usando Router e aplica o layout
-function App() {
+//* Componente para controlar a exibição da Navbar
+function AppContent() {
+  const location = useLocation();
+  const hideNavbar = location.pathname === "/newclient";
+  const hideFooter = location.pathname === "/newclient";
+
   return (
-    <Router>
-      <Navbar />
+    <>
+      {!hideNavbar && <Navbar />}
 
       <Routes>
         <Route
@@ -27,35 +40,20 @@ function App() {
             </Container>
           }
         />
-        <Route
-          path="/company"
-          element={
-            <Container customClass="min-height">
-              <Company />
-            </Container>
-          }
-        />
-        <Route
-          path="/contact"
-          element={
-            <Container customClass="min-height">
-              <Contact />
-            </Container>
-          }
-        />
+
         <Route
           path="/projects"
           element={
             <Container customClass="min-height">
-              <Projects />
+              <Projeto />
             </Container>
           }
         />
         <Route
-          path="/tasks"
+          path="/tarefas"
           element={
             <Container customClass="min-height">
-              <Tasks />
+              <Tarefa />
             </Container>
           }
         />
@@ -75,9 +73,54 @@ function App() {
             </Container>
           }
         />
+
+        {/* Rota principal: Login + Cadastro juntos */}
+        <Route
+          path="/clientes"
+          element={
+            <Container customClass="min-height">
+              <ClienteForm />
+            </Container>
+          }
+        />
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route path="projetos" element={<Projeto />} />
+          <Route path="equipe" element={<Equipe />} />
+          <Route path="tarefas" element={<Tarefa />} />
+        </Route>
+
+        {/* Rota para cadastrar nova tarefa */}
+        <Route
+          path="/newtarefa"
+          element={
+            <Container customClass="min-height">
+              <NewTarefa />
+            </Container>
+          }
+        />
+
+        {/* Rota para cadastrar nova equipe */}
+        <Route
+          path="/newequipe"
+          element={
+            <Container customClass="min-height">
+              <NewEquipe />
+            </Container>
+          }
+        />
       </Routes>
 
-      <Footer />
+      {!hideFooter && <Footer />}
+    </>
+  );
+}
+
+//* Componente raiz
+//* define as rotas principais usando Router e aplica o layout
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }

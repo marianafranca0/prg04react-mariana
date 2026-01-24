@@ -1,5 +1,5 @@
 import styles from "./Input.module.css";
-
+//* Componente de entrada de formulário reutilizável */
 function Input({ type, text, name, placeholder, onChange, value }) {
   return (
     <div className={styles.form_control}>

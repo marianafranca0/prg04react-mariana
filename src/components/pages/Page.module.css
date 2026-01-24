@@ -1,7 +1,7 @@
-/* Estilos da página de Tarefas */
-/* Layout em grid com duas colunas para criar e visualizar tarefas */
+/* Estilos Padrão das páginas */
+/* layout em grid com duas colunas para criar e visualizar porjetos, equipes etc.*/
 
-.tasks_container {
+.container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2em;
@@ -10,7 +10,6 @@
   margin: 0 auto;
 }
 
-/* Estilo padrão das seções (criar tarefa e tarefas cadastradas) */
 .section {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -32,15 +31,13 @@
   margin-bottom: 1.5em;
 }
 
-/* Container para o botão de criar tarefa */
 .btn_container {
   display: flex;
   justify-content: center;
   margin-top: 1em;
 }
 
-/* Área de visualização das tarefas cadastradas */
-.tasks_list {
+.list {
   min-height: 300px;
   display: flex;
   align-items: center;

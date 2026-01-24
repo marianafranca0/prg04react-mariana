@@ -1,0 +1,42 @@
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  padding-top: 5px; /* espaço entre navbar e menu */
+  padding-bottom: 5px; /* espaço entre footer e menu */
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #222;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 10px 0;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}

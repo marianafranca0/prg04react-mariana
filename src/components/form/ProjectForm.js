@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Input from "./Input";
 import Select from "./Select";
-import styles from "../form/Form.module.css";
+import styles from "./Form.module.css";
 
 //* Formulário que coleta dados do projeto
 function ProjectForm() {

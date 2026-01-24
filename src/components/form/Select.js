@@ -1,6 +1,6 @@
-// Select.js
 import styles from "./Select.module.css";
 
+//* Componente de seleção reutilizável */
 function Select({ text, name, options = [], handleOnChange, value }) {
   return (
     <div className={styles.form_control}>

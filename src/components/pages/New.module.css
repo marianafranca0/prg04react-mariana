@@ -1,7 +1,12 @@
 .new_container {
-  width: 500px;
-  margin: 0 auto;
-  padding: 3em;
+  width: 700px;
+  margin: auto;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .new_container h1 {

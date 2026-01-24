@@ -1,14 +1,13 @@
 import { useState } from "react";
-import Input from "./Input";
-import styles from "../form/Form.module.css";
+import Input from "../form/Input";
+import styles from "./Form.module.css";
 
-//* Formulário que coleta dados do cliente
-
-function ClientForm() {
+//* Formulário que coleta dados do cliente para cadastro de nova conta.
+function SignupForm({ onSwitch }) {
   const [cliente, setCliente] = useState({
     nome: "",
-    cnpj: "",
     email: "",
+    senha: "",
     telefone: "",
   });
 
@@ -20,15 +19,15 @@ function ClientForm() {
 
     const clienteTrimmed = {
       nome: cliente.nome.trim(),
-      cnpj: cliente.cnpj.trim(),
       email: cliente.email.trim(),
+      senha: cliente.senha.trim(),
       telefone: cliente.telefone.trim(),
     };
 
     if (
       !clienteTrimmed.nome ||
-      !clienteTrimmed.cnpj ||
       !clienteTrimmed.email ||
+      !clienteTrimmed.senha ||
       !clienteTrimmed.telefone
     ) {
       alert("Preencha todos os campos corretamente.");
@@ -57,30 +56,15 @@ function ClientForm() {
   };
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
-      {/* Componente Input que utiliza props */}
-      {/* Campo nome */}
+    <form onSubmit={handleSubmit} className={styles.form}>
+      {/* Campo nome (apenas ao criar conta) */}
       <Input
         type="text"
         text="Nome"
         name="nome"
-        placeholder="Insira o nome do cliente"
+        placeholder="Insira o seu nome"
         onChange={(e) => setCliente({ ...cliente, nome: e.target.value })}
-      />
-
-      {/* Campo cnpj */}
-      <Input
-        type="text"
-        text="Cnpj"
-        name="cnpj"
-        placeholder="Insira o cnpj do cliente (14 dígitos)"
-        onChange={(e) => {
-          const valor = e.target.value.replace(/\D/g, "");
-          if (valor.length <= 14) {
-            setCliente({ ...cliente, cnpj: valor });
-          }
-        }}
-        value={cliente.cnpj}
+        value={cliente.nome}
       />
 
       {/* Campo email */}
@@ -88,16 +72,34 @@ function ClientForm() {
         type="email"
         text="Email"
         name="email"
-        placeholder="Insira o email do cliente"
+        placeholder="Informe seu email"
         onChange={(e) => setCliente({ ...cliente, email: e.target.value })}
+        value={cliente.email}
       />
 
-      {/* Campo telefone */}
+      {/* Campo senha */}
+      <Input
+        type="password"
+        text="Senha"
+        name="senha"
+        placeholder="Informe sua senha (máx. 8 caracteres"
+        onChange={(e) => {
+          const valor = e.target.value;
+          if (valor.length <= 8) {
+            setCliente({ ...cliente, senha: valor });
+          }
+        }}
+        value={cliente.senha}
+        maxLength="8"
+      />
+
+      {/* Campo telefone (apenas ao criar conta) */}
+
       <Input
         type="text"
         text="Telefone"
         name="telefone"
-        placeholder="Insira o telefone do cliente (11 dígitos)"
+        placeholder="Informe seu telefone (11 dígitos)"
         onChange={(e) => {
           const valor = e.target.value.replace(/\D/g, "");
           if (valor.length <= 11) {
@@ -108,7 +110,7 @@ function ClientForm() {
             if (valor.length > 7) {
               telefoneFormatado = `(${valor.slice(0, 2)}) ${valor.slice(
                 2,
-                7
+                7,
               )}-${valor.slice(7)}`;
             }
             setCliente({ ...cliente, telefone: telefoneFormatado });
@@ -116,9 +118,17 @@ function ClientForm() {
         }}
         value={cliente.telefone}
       />
+
       <div>
-        <input className={styles.btn} type="submit" value="Cadastrar Cliente" />
+        <input className={styles.btn} type="submit" value="Criar Conta" />
       </div>
+
+      <p className={styles.signup_text}>
+        Já tem uma conta?{" "}
+        <button type="button" className={styles.signup_link} onClick={onSwitch}>
+          Voltar ao Login
+        </button>
+      </p>
 
       {mensagem && <p className={styles.sucesso}>{mensagem}</p>}
       {erro && <p className={styles.erro}>{erro}</p>}
@@ -126,4 +136,4 @@ function ClientForm() {
   );
 }
 
-export default ClientForm;
+export default SignupForm;
