@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Input from "../form/Input";
-import styles from "./Form.module.css";
+import Input from "../input/Input";
+import styles from "../Form.module.css";
 
 //* Formulário que coleta dados do cliente para cadastro de nova conta.
 function SignupForm({ onSwitch }) {

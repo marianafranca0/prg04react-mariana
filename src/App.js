@@ -6,20 +6,22 @@ import {
   useLocation,
 } from "react-router-dom";
 import "./index.css";
-import Home from "./components/pages/Home";
+import Home from "./components/pages/home/Home";
 
-import NewProject from "./components/pages/NewProjeto";
-import Container from "./components/layout/Container";
-import Navbar from "./components/layout/Navbar";
-import Footer from "./components/layout/Footer";
-import Projeto from "./components/pages/Projeto";
-import Tarefa from "./components/pages/Tarefa";
-import NewTarefa from "./components/pages/NewTarefa";
-import NewClient from "./components/pages/NewClient";
-import ClienteForm from "./components/form/ClienteForm";
-import Dashboard from "./components/pages/Dashboard";
-import Equipe from "./components/pages/Equipe";
-import NewEquipe from "./components/pages/NewEquipe";
+import NewProject from "./components/pages/projeto/NewProjeto";
+import Projeto from "./components/pages/projeto/Projeto";
+import Container from "./components/layout/container/Container";
+import Navbar from "./components/layout/navbar/Navbar";
+import Footer from "./components/layout/footer/Footer";
+import Tarefa from "./components/pages/tarefa/Tarefa";
+import NewTarefa from "./components/pages/tarefa/NewTarefa";
+import NewClient from "./components/pages/cliente/NewCliente";
+import ClienteForm from "./components/form/cliente/ClienteForm";
+import Dashboard from "./components/pages/dashboard/Dashboard";
+import Equipe from "./components/pages/equipe/Equipe";
+import NewEquipe from "./components/pages/equipe/NewEquipe";
+import ServicoForm from "./components/form/servico/ServicoForm";
+import Servico from "./components/pages/servico/Servico";
 
 //* Componente para controlar a exibição da Navbar
 function AppContent() {
@@ -87,6 +89,7 @@ function AppContent() {
           <Route path="projetos" element={<Projeto />} />
           <Route path="equipe" element={<Equipe />} />
           <Route path="tarefas" element={<Tarefa />} />
+          <Route path="servicos" element={<Servico />} />
         </Route>
 
         {/* Rota para cadastrar nova tarefa */}
@@ -108,6 +111,17 @@ function AppContent() {
             </Container>
           }
         />
+
+        {/* Rota para cadastrar novo serviço */}
+        <Route
+          path="/newservico"
+          element={
+            <Container customClass="min-height">
+              <ServicoForm />
+            </Container>
+          }
+        />
+        
       </Routes>
 
       {!hideFooter && <Footer />}

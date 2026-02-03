@@ -18,6 +18,9 @@ function Dashboard() {
           <li>
             <Link to="tarefas">Tarefas</Link>
           </li>
+          <li>
+            <Link to="servicos">Serviços</Link>
+          </li>
         </ul>
       </nav>
 

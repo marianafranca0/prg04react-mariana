@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Input from "../form/Input";
-import Select from "../form/Select";
+import Input from "../input/Input";
+import Select from "../select/Select";
 import { useEffect } from "react";
-import styles from "./Form.module.css";
+import styles from "../Form.module.css";
 function EquipeForm() {
   const navigate = useNavigate();
   const [equipe, setEquipe] = useState({

@@ -1,5 +1,5 @@
-import styles from "./New.module.css";
-import EquipeForm from "../form/EquipeForm";
+import styles from "../New.module.css";
+import EquipeForm from "../../form/equipe/EquipeForm";
 
 //* Página de criação de equipes que contém o formulário de equipe.
 function NewEquipe() {

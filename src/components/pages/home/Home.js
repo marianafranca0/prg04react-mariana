@@ -1,6 +1,6 @@
 import styles from "./Home.module.css";
-import LinkButton from "../layout/LinkButton";
-import growthImg from "../../img/growth-improve-productivity-svgrepo-com.svg";
+import LinkButton from "../../layout/linkbutton/LinkButton";
+import growthImg from "../../../img/growth-improve-productivity-svgrepo-com.svg";
 
 //* página HOME
 function Home() {
@@ -12,8 +12,6 @@ function Home() {
             Software para <br /> Gestão de Projetos
           </h1>
           <p>Gerencie projetos, tarefas e equipes no Proiecte.</p>
-
-         
         </div>
         <div className={styles.image_content}>
           <img src={growthImg} alt="Growth Improve" />

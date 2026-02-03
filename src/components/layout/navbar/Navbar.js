@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import Container from "./Container";
+import Container from "../container/Container";
 import styles from "./Navbar.module.css";
-import logo from "../../img/logoo.png";
+import logo from "../../../img/logoo.png";
 
 //* Navbar -
 //* barra de navegação do site.

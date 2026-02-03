@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./Form.module.css";
+import styles from "../Form.module.css";
 
 function TarefaForm() {
   const navigate = useNavigate();
@@ -9,7 +9,7 @@ function TarefaForm() {
     titulo: "",
     descricao: "",
     prazo: "",
-    membroId: ""
+    idEquipe: "",
   });
 
   const [membros, setMembros] = useState([]);
@@ -44,7 +44,7 @@ function TarefaForm() {
       })
       .then(() => {
         alert("Tarefa cadastrada com sucesso!");
-        navigate("/dashboard/tasks"); // volta para a lista de tarefas
+        navigate("/dashboard/tarefas"); // volta para a lista de tarefas
       })
       .catch((err) => {
         alert("Erro: " + err.message);
@@ -89,8 +89,8 @@ function TarefaForm() {
         <div>
           <label>Responsável:</label>
           <select
-            name="membroId"
-            value={tarefa.membroId}
+            name="idEquipe"
+            value={tarefa.idEquipe}
             onChange={handleChange}
             required
           >

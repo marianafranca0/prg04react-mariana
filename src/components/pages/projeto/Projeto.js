@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import LinkButton from "../layout/LinkButton";
-import styles from "./Page.module.css";
+import LinkButton from "../../layout/linkbutton/LinkButton";
+import styles from "../Page.module.css";
 
 //* Página de Projetos
 //* Permite visualizar e criar novos projetos
@@ -37,7 +37,7 @@ function Projeto() {
             <ul>
               {projetos.map((p) => (
                 <li key={p.id}>
-                  <strong>{p.nome}</strong> - {p.descricao}
+                  <strong>{p.nome}</strong> - {p.descricao} <br></br>
                   {p.cliente && ` (Cliente: ${p.cliente.nome})`}
                 </li>
               ))}

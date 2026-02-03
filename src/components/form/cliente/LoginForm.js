@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Input from "../form/Input";
-import styles from "./Form.module.css";
+import Input from "../input/Input";
+import styles from "../Form.module.css";
 
 //* Componente de formulário de login de clientes.
 function LoginForm({ onSwitch }) {
- const navigate = useNavigate();
+  const navigate = useNavigate();
   const [cliente, setCliente] = useState({
     email: "",
     senha: "",
@@ -42,7 +42,6 @@ function LoginForm({ onSwitch }) {
         setMensagem(`Cliente ${data.nome} logado com sucesso!`);
         setErro("");
         navigate("/dashboard");
-
       })
       .catch((err) => {
         setErro(err.message);

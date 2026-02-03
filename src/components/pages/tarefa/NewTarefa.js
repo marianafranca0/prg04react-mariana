@@ -1,5 +1,5 @@
-import styles from "./New.module.css";
-import TarefaForm from "../form/TarefaForm";
+import styles from "../New.module.css";
+import TarefaForm from "../../form/tarefa/TarefaForm";
 
 //* Página de criação de tarefas que contém o formulário de tarefa.
 function NewTarefa() {
